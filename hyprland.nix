@@ -21,7 +21,8 @@
 				"nm-applet"
 				"dunst"
 				"waybar"
-				"fcitx5 -d --replace"
+				"fcitx5 -d -r"
+				"fcitx5-remote -r"
 			];
 			# See https://wiki.hypr.land/Configuring/Environment-v
 			env = [
@@ -29,9 +30,9 @@
 				"HYPRCURSOR_SIZE,24"
 				#fcitx5
 				"QT_IM_MODULE,fcitx"
-				"XMODIFIERS,@im=fcitx"
-				"INPUT_METHOD,fcitx"
 				"GTK_IM_MODULE,fcitx"
+				"XMODIFIERS,@im=fcitx"
+				#"INPUT_METHOD,fcitx"
 			];
 
 			# 一般設定
@@ -122,8 +123,8 @@
 
 			#ジェスチャー
 			gestures = {
-				workspace_swipe = true;
-				workspace_swipe_fingers = 3;
+				#workspace_swipe = true;
+				#workspace_swipe_fingers = 3;
 			};
 
 			#キーバインド
@@ -206,8 +207,9 @@
 
 			# ウィンドウルール
 			windowrule = [
-				"suppressevent maximize, class:.*"
-				"nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+				#pseudo, fcitx
+				#"suppressevent maximize, class:.*"
+				#"nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 			];
 		};
 	};

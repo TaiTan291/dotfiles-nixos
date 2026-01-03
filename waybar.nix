@@ -43,7 +43,7 @@
 					format-bluetooth = "{icon} {volume}%";
 					format-muted = "🔇";
 					format-icons = {
-						default = "🔊"
+						default = "🔊";
 					};
 					on-click = "pavucontrol";
 				};

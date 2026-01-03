@@ -3,13 +3,13 @@
 
 {
 	home = {
+		stateVersion = "25.11";
 		username = "taitan";
 		homeDirectory = "/home/taitan";
 		packages = with pkgs; [
-			home-manager
+			#home-manager
 			bat
 			bottom
-			exa
 			httpie
 			pingu
 			ripgrep
@@ -26,9 +26,9 @@
 
 	imports = [
 		./hyprland.nix
-		./wayland
-		./git,nix
+		./waybar.nix
+		./git.nix
+		./fcitx5.nix
 	];
-
 	programs.home-manager.enable = true; # home-manager
 }

@@ -5,9 +5,10 @@
 { config, inputs, lib, pkgs, ... }:
 
 {
-	imports =[
+	imports = [
 		# Include the results of the hardware scan.
 		./hardware-configuration.nix
+		inputs.home-manager.nixosModules.home-manager
 	];
 
 
@@ -100,10 +101,9 @@
 	};
 
 	nixpkgs.config.allowUnfree = true;
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	environment.systemPackages = with pkgs; [
-	#Installan ediotr to edit the configuration
-		
 		# GUI( Hyprland )
 		kitty
 		waybar
@@ -126,6 +126,7 @@
 		##editor
 		neovim
 		emacs
+		vscode
 		
 		## dependence
 		deno # denops.vim
@@ -141,7 +142,7 @@
 	];
 
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "archlinux"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";

@@ -13,13 +13,15 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXROOT";
-    };
+  fileSystems."/" ={
+		device = "/dev/disk/by-label/NIXROOT";
+		fsType = "ext4";
+  };
 
-	fileSystems."/boot" =
-		{ device = "/dev/disk/by-label/NIXBOOT";
-		};
+	fileSystems."/boot" ={
+		device = "/dev/disk/by-label/NIXBOOT";
+		fsType = "vfat";
+	};
 
   swapDevices = [
 		{label = "swap";}
